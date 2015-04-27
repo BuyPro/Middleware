@@ -11,6 +11,7 @@ var path = require("path"),
                 stream.on('end', function(){
                     results.resolve([req, res]);
                 });
+                stat.filepath = fullpath;
                 res.sendFile(stream, stat);
             } else {
                 results.resolve(next());
