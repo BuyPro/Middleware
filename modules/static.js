@@ -12,7 +12,7 @@ var path = require("path"),
                     results.resolve([req, res]);
                 });
                 stat.filepath = fullpath;
-                res.sendFile(stream, stat);
+                res.sendFileStream(stream, stat);
             } else {
                 results.resolve(next());
             }
