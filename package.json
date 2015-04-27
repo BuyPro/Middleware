@@ -1,0 +1,23 @@
+{
+  "name": "bp-middleware",
+  "version": "0.1.0",
+  "description": "A set of useful middleware for the BuyPro HttpServer implementation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuyPro/Middleware.git"
+  },
+  "keywords": [
+    "BuyPro",
+    "Middleware"
+  ],
+  "author": "Louis Capitanchik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuyPro/Middleware/issues"
+  },
+  "homepage": "https://github.com/BuyPro/Middleware",
+  "dependencies": {
+    "q": "^1.3.0"
+  }
+}
