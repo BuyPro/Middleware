@@ -1,4 +1,5 @@
 module.exports = {
     static: require('./modules/static'),
-    router: require('./modules/router')
+    router: require('./modules/router'),
+    render: require('./modules/render')
 }
