@@ -5,7 +5,10 @@ var formidable = require("formidable"),
             form;
 
         req.body = {};
+        req.query = require('url').parse(req.url, true).query;
         req.files = {};
+
+        req.url = req.url.split("?")[0];
 
         form = new formidable.IncomingForm();
         form.on('field', function(name, value){
