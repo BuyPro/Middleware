@@ -3,15 +3,18 @@ var path = require("path"),
     sideburns = require("bp-sideburns"),
     q = require("q"),
     render = function(basepath, filepath, data, options){
-        var extension = options.extension || ".sb",
+        var res = this,
+            if(typeof options === "undefined"){
+                options = {};
+            }
+            extension = options.extension || ".sb",
             def = q.defer(),
-            file = fs.readFile(path.join(basepath, filepath), function(e, f){
+            file = fs.readFile(path.join(basepath, filepath) + extension, function(e, f){
                 if(e) {
                     def.reject(e);
                 } else {
-                    this.send(200, sideburns(f, data, options, {'Content-Type': 'text/html'})).then(function(d){
-                        def.resolve(true);
-                    })
+                    res.send(200, sideburns(f.toString(), data, options), {'Content-Type': 'text/html'});
+                    def.resolve(true);
                 }
             });
         return def.promise;
