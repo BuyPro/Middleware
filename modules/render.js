@@ -3,10 +3,10 @@ var path = require("path"),
     sideburns = require("bp-sideburns"),
     q = require("q"),
     render = function(basepath, filepath, data, options){
+        if(typeof options === "undefined"){
+            options = {};
+        }
         var res = this,
-            if(typeof options === "undefined"){
-                options = {};
-            }
             extension = options.extension || ".sb",
             def = q.defer(),
             file = fs.readFile(path.join(basepath, filepath) + extension, function(e, f){
