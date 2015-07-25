@@ -1,6 +1,6 @@
 {
   "name": "bp-middleware",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "A set of useful middleware for the BuyPro HttpServer implementation",
   "main": "index.js",
   "repository": {

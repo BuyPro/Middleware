@@ -4,11 +4,13 @@ var mwrouter = function (router, req, res, next) {
         val = router.route(req.method, req.url, req, res);
     } catch (e) {
         if(e.message.indexOf("Router has no METHOD") > -1) {
-            res.error();
+            res.error(405, {code: 405, message: "Method " + req.method + " Supported for " + req.url});
         } else {
             throw e;
         }
     }
+
+    return val;
 }
 
 module.exports = function(router){
